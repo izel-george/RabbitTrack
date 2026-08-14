@@ -64,7 +64,7 @@ export function useAuth() {
 
   function logout() {
     sessionStore.clear()
-    navigate('/login')
+    navigate('/')
   }
 
   return { signup, login, acceptInvite, logout, loading, error }
