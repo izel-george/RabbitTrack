@@ -1,5 +1,4 @@
 import { useState, type FormEvent } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
 import { Card, Button, FormField, inputStyle } from '../../components/ui'
 import { useAuth } from './useAuth'
 
@@ -12,14 +11,10 @@ export function SignupPage() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
-  async function handleSubmit(e: FormEvent) {
+function handleSubmit(e: FormEvent) {
     e.preventDefault()
-    try {
-      await signup(farmName, name, email, password )
-      navigate('/dashboard')
-    } catch (error) {
-      console.error('Signup failed:', error)
-    }
+  signup(farmName, name, email, password)
+
   }
 
   return (
