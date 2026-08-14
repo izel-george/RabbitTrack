@@ -1,10 +1,10 @@
 import { useState, type FormEvent } from 'react'
+import { Link } from 'react-router-dom'
 import { Card, Button, FormField, inputStyle } from '../../components/ui'
 import { useAuth } from './useAuth'
 
 export function SignupPage() {
   const { signup, loading, error } = useAuth()
-  const navigate = useNavigate()
 
   const [farmName, setFarmName] = useState('')
   const [name, setName] = useState('')
