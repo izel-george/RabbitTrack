@@ -26,7 +26,7 @@ export function useAuth() {
     try {
       const res = await api.auth.signup(farmName, name, email, password)
       applySession(res)
-      navigate('/')
+      navigate('/dashboard')
     } catch (e) {
       setError(e instanceof ApiError && e.status === 409 ? 'An account with this email already exists.' : 'Could not create your farm — please try again.')
     } finally {
