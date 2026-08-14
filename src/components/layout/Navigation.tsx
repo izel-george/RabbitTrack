@@ -4,7 +4,7 @@ import { useSession } from '../../utils/sessionStore'
 import { useAuth } from '../../features/auth/useAuth'
 
 const baseNavItems = [
-  { to: '/', label: 'Home', icon: Home },
+  { to: '/dashboard', label: 'Home', icon: Home },
   { to: '/does', label: 'Does', icon: PawPrint },
   { to: '/bucks', label: 'Bucks', icon: RabbitIcon },
   { to: '/herd', label: 'Herd', icon: Users },
@@ -62,7 +62,7 @@ export function Navigation() {
               <NavLink
                 key={to}
                 to={to}
-                end={to === '/'}
+                end={to === '/dashboard'}
                 style={({ isActive }) => ({
                   padding: '8px 16px',
                   borderRadius: 'var(--radius-sm)',
@@ -119,7 +119,7 @@ export function Navigation() {
           <NavLink
             key={to}
             to={to}
-            end={to === '/'}
+            end={to === '/dashboard'}
             style={({ isActive }) => ({
               flex: 1,
               display: 'flex',
