@@ -40,7 +40,7 @@ export function useAuth() {
     try {
       const res = await api.auth.login(email, password, farmCode)
       applySession(res)
-      navigate('/')
+      navigate('/dashboard')
     } catch {
       setError('Could not sign in — check your email, password, and farm code.')
     } finally {
@@ -54,7 +54,7 @@ export function useAuth() {
     try {
       const res = await api.auth.acceptInvite(token, email, name, password)
       applySession(res)
-      navigate('/')
+      navigate('/dashboard')
     } catch {
       setError('This invite link is invalid or has expired — ask your admin to resend it.')
     } finally {
