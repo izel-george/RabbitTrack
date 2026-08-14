@@ -11,11 +11,13 @@ import { DoeDetailsPage } from '../features/does/DoeDetailsPage'
 import { BucksListPage } from '../features/bucks/BucksListPage'
 import { HerdPage } from '../features/herd/HerdPage'
 import { AdminProfilePage } from '../features/admin/AdminProfilePage'
+import { LandingPage } from '../features/landing/LandingPage'
 
 export function AppRouter() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path="/" element={<LandingPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/accept-invite" element={<AcceptInvitePage />} />
@@ -28,7 +30,7 @@ export function AppRouter() {
                 <Navigation />
                 <main className="app-main">
                   <Routes>
-                    <Route path="/" element={<DashboardPage />} />
+                    <Route path="/dashboard" element={<DashboardPage />} />
                     <Route path="/does" element={<DoesListPage />} />
                     <Route path="/does/:id" element={<DoeDetailsPage />} />
                     <Route path="/bucks" element={<BucksListPage />} />
