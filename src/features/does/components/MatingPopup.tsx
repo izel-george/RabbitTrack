@@ -69,7 +69,7 @@ export function MatingPopup({
       <FormField label="Buck">
         <select value={sireId} onChange={(e) => setSireId(e.target.value)} style={selectStyle}>
           <option value="">Select a buck…</option>
-          {bucks.map((b) => (
+          {(bucks??[]).map((b) => (
             <option key={b.id} value={b.id}>{b.name}</option>
           ))}
         </select>
