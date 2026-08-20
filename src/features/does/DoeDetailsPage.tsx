@@ -8,6 +8,7 @@ import { MilestoneTimeline } from './components/MilestoneTimeline'
 import { RecentActivityFeed } from './components/RecentActivityFeed'
 import { EditDoeModal } from './components/EditDoeModal'
 import { MatingPopup } from './components/MatingPopup'
+import { LoadingScreen } from '../../components/ui/LoadingScreen'
 
 export function DoeDetailsPage() {
   const { id } = useParams<{ id: string }>()
@@ -17,7 +18,7 @@ export function DoeDetailsPage() {
   const [matingOpen, setMatingOpen] = useState(false)
 
   if (!data ) {
-    return <div>Loading...</div>
+    return <LoadingScreen />
   }
 
   const { doe, activeLitter, recentActivity } = data

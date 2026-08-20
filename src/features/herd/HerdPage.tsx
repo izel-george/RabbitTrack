@@ -3,12 +3,13 @@ import { StatCard } from '../../components/ui'
 import { useHerd } from './useHerd'
 import { HerdBatchCard } from './components/HerdBatchCard'
 import { WeekReadyGroupCard } from './components/WeekReadyGroupCard'
+import {LoadingScreen} from '../../components/ui/LoadingScreen'
 
 export function HerdPage() {
   const { data } = useHerd()
 
   if (!data) {
-    return <div>Loading...</div>
+    return <LoadingScreen />
   }
 
   return (

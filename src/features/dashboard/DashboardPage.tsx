@@ -3,12 +3,13 @@ import { StatCard, Card } from '../../components/ui'
 import { useDashboard } from './useDashboard'
 import { ActiveKitGroupCard } from './components/ActiveKitGroupCard'
 import { ClipboardList, HeartPulse } from 'lucide-react'
+import {LoadingScreen} from '../../components/ui/LoadingScreen'
 
 export function DashboardPage() {
   const { data } = useDashboard()
 
   if (!data) {
-    return <div>Loading...</div>
+    return <LoadingScreen />
   }
 
   return (
