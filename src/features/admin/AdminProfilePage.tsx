@@ -8,6 +8,7 @@ import { InviteUserModal } from './components/InviteUserModal'
 import { EditFarmUserModal } from './components/EditFarmUserModal'
 import { api } from '../../utils/api'
 import type { FarmUserSummary } from '../../types'
+import {LoadingScreen} from '../../components/ui/LoadingScreen'
 
 export function AdminProfilePage() {
   const { farmName, farmCode } = useSession()
@@ -37,7 +38,7 @@ export function AdminProfilePage() {
   }
 
   if (!farmName || !farmCode) {
-    return <div>Loading...</div>
+    return <LoadingScreen />
   }
 
   return (

@@ -4,6 +4,7 @@ import { Button, Card } from '../../components/ui'
 import { useDoes } from './useDoes'
 import { DoeCard } from './components/DoeCard'
 import { AddDoeModal } from './components/AddDoeModal'
+import {LoadingScreen} from '../../components/ui/LoadingScreen'
 
 const filters = ['All Does', 'Pregnant', 'Nursing', 'Resting'] as const
 
@@ -13,7 +14,7 @@ export function DoesListPage() {
   const [addOpen, setAddOpen] = useState(false)
 
   if (!does) {
-    return <div>Loading...</div>
+    return <LoadingScreen />
   }
 
   const filtered = does.filter((d) => {

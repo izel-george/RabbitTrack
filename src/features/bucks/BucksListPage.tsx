@@ -4,13 +4,14 @@ import { Button } from '../../components/ui'
 import { useBucks } from './useBucks'
 import { BuckCard } from './components/BuckCard'
 import { AddBuckModal } from './components/AddBuckModal'
+import {LoadingScreen} from '../../components/ui/LoadingScreen'
 
 export function BucksListPage() {
   const { data: bucks, refetch } = useBucks()
   const [addOpen, setAddOpen] = useState(false)
 
   if (!bucks) {
-    return <div>Loading...</div>
+    return <LoadingScreen/>
   }
 
   return (
